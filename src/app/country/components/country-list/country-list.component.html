@@ -53,7 +53,7 @@
 
       @if (countries().length === 0 && !isLoading()){
         <tr>
-          <td colspan="8" class="text-center text-3xl">
+          <td colspan="8" class="text-center text-3xl font-bold">
             No hay países que mostrar
           </td>
         </tr>
@@ -61,7 +61,7 @@
       <!-- ----------- -->
        @if(isLoading()) {
         <tr>
-          <td colspan="8" class="text-center">
+          <td colspan="8" class="text-center text-3xl font-bold">
             Cargando...
           </td>
         </tr>
