@@ -1,3 +1,33 @@
-<country-list [countries]="[]"/>
 
+
+<h1 class="tex-2xl">Por Region</h1>
+<h3 class="text-lg">Seeleccione una región</h3>
+
+<section class="row mt-2">
+  <div class="flex-col">
+    @for (region of regions; track region) {
+      <button class="btn bten-outline mr-2 w-[100px]"
+      (click)="selectedRegion.set(region)"
+      [class.btn-primary] = "selectedRegion() === region"
+      >
+
+        {{region}}</button>
+    }
+
+  </div>
+</section>
+
+
+<section class="country-list">
+
+  <div *ngFor="let country of countries" class="country">
+    {{country.name}}
+  </div>
+</section>
+<country-list
+[countries]="countryResource.value() ?? []"
+[errorMessage]="countryResource.error()"
+[isEmpty]="countryResource.value()?.length === 0"
+[isLoading]="countryResource.isLoading()"
+/>
 
